@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import <DropboxSDK/DropboxSDK.h>
 
-@interface ViewController ()
+@interface ViewController () <DBRestClientDelegate>
+
+@property (nonatomic, strong) DBRestClient *restClient;
 
 @end
 
@@ -17,6 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.restClient = [[DBRestClient alloc] initWithSession:[DBSession sharedSession]];
+    self.restClient.delegate = self;
+}
+
+- (IBAction)didPressLink{
+    if (![[DBSession sharedSession] isLinked]) {
+        [[DBSession sharedSession] linkFromController:self];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

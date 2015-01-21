@@ -14,6 +14,10 @@
 		7CEF78961A7031DA00A53DED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CEF78951A7031DA00A53DED /* Images.xcassets */; };
 		7CEF78991A7031DA00A53DED /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CEF78971A7031DA00A53DED /* LaunchScreen.xib */; };
 		7CEF78A51A7031DA00A53DED /* MCSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF78A41A7031DA00A53DED /* MCSTests.m */; };
+		7CEF78B01A70331600A53DED /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEF78AF1A70331600A53DED /* Constants.m */; };
+		7CEF78B41A7033E400A53DED /* DropboxSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEF78B31A7033E400A53DED /* DropboxSDK.framework */; };
+		7CEF78B61A7033F800A53DED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEF78B51A7033F800A53DED /* Security.framework */; };
+		7CEF78B81A7033FD00A53DED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CEF78B71A7033FD00A53DED /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,11 @@
 		7CEF789E1A7031DA00A53DED /* MCSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MCSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEF78A31A7031DA00A53DED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CEF78A41A7031DA00A53DED /* MCSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCSTests.m; sourceTree = "<group>"; };
+		7CEF78AE1A70331600A53DED /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7CEF78AF1A70331600A53DED /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		7CEF78B31A7033E400A53DED /* DropboxSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DropboxSDK.framework; sourceTree = "<group>"; };
+		7CEF78B51A7033F800A53DED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		7CEF78B71A7033FD00A53DED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CEF78B81A7033FD00A53DED /* QuartzCore.framework in Frameworks */,
+				7CEF78B61A7033F800A53DED /* Security.framework in Frameworks */,
+				7CEF78B41A7033E400A53DED /* DropboxSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +75,7 @@
 		7CEF787C1A7031DA00A53DED = {
 			isa = PBXGroup;
 			children = (
+				7CEF78B21A7033D800A53DED /* Frameworks */,
 				7CEF78871A7031DA00A53DED /* MCS */,
 				7CEF78A11A7031DA00A53DED /* MCSTests */,
 				7CEF78861A7031DA00A53DED /* Products */,
@@ -83,6 +96,8 @@
 			children = (
 				7CEF788C1A7031DA00A53DED /* AppDelegate.h */,
 				7CEF788D1A7031DA00A53DED /* AppDelegate.m */,
+				7CEF78AE1A70331600A53DED /* Constants.h */,
+				7CEF78AF1A70331600A53DED /* Constants.m */,
 				7CEF788F1A7031DA00A53DED /* ViewController.h */,
 				7CEF78901A7031DA00A53DED /* ViewController.m */,
 				7CEF78921A7031DA00A53DED /* Main.storyboard */,
@@ -117,6 +132,16 @@
 				7CEF78A31A7031DA00A53DED /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CEF78B21A7033D800A53DED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CEF78B71A7033FD00A53DED /* QuartzCore.framework */,
+				7CEF78B51A7033F800A53DED /* Security.framework */,
+				7CEF78B31A7033E400A53DED /* DropboxSDK.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +247,7 @@
 				7CEF78911A7031DA00A53DED /* ViewController.m in Sources */,
 				7CEF788E1A7031DA00A53DED /* AppDelegate.m in Sources */,
 				7CEF788B1A7031DA00A53DED /* main.m in Sources */,
+				7CEF78B01A70331600A53DED /* Constants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +369,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MCS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,6 +383,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MCS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

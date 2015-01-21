@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Constants.h"
+
+#import <DropboxSDK/DropboxSDK.h>
 
 @interface AppDelegate ()
 
@@ -17,7 +20,22 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    DBSession *dbSession = [[DBSession alloc] initWithAppKey:INSERT_DB_APP_KEY appSecret:INSERT_DB_APP_SECRET root:kDBRootDropbox];
+    [DBSession setSharedSession:dbSession];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url
+  sourceApplication:(NSString *)source annotation:(id)annotation {
+    if ([[DBSession sharedSession] handleOpenURL:url]) {
+        if ([[DBSession sharedSession] isLinked]) {
+            NSLog(@"App linked successfully!");
+            // At this point you can start making API calls
+        }
+        return YES;
+    }
+    // Add whatever other url handling code your app requires here
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
